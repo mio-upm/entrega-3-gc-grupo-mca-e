@@ -29,14 +29,6 @@ def son_incompatibles(operaciones):
             and op2['Código operación'] != op1['Código operación']]
     return incompatibilidades
 
-# Planificacion factible: comprueba si la planificación dada es factible
-def planificacion_factible(planificacion, incompatibilidades):
-    for op1 in planificacion:
-        for op2 in planificacion:
-            if op1 != op2 and op2 in incompatibilidades[op1]:
-                return False
-    return True
-
 # Generar planificaciones factibles
 def generar_planificaciones(operaciones, incompatibilidades):
     planificaciones_orden_inicio = []
